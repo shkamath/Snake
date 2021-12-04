@@ -9,12 +9,19 @@ screen.bgcolor("black")
 screen.title("Anaconda")
 screen.tracer(0)
 
-screen.update()
+snake = Snake()
+
+screen.listen()
+screen.onkey(snake.up,"Up")
+screen.onkey(snake.down,"Down")
+screen.onkey(snake.left,"Left")
+screen.onkey(snake.right,"Right")
 
 game_on = True
 while game_on:
    time.sleep(0.1)
+   screen.update()
+   snake.move()
 
-   screen.update() #update only when all three segments have moved forward
 
 screen.exitonclick()
