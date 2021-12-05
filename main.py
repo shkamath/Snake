@@ -1,7 +1,7 @@
 from turtle import Screen
-from snake import Snake
-from food import Food
-from score import ScoreBoard
+from data.snake import Snake
+from data.food import Food
+from data.score import ScoreBoard
 import time
 
 """Setup screen """
