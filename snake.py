@@ -13,6 +13,7 @@ class Snake:
       self.snake = []
       self.createSnake()
       self.head = self.snake[0]
+      self.tail = self.snake[-1]
 
    def createTurtle(self,pos):
       turt = Turtle("square")
@@ -47,3 +48,6 @@ class Snake:
    def right(self):
       if self.head.heading() != LEFT:
          self.head.seth(RIGHT)
+   
+   def grow(self):
+      self.snake.append(self.createTurtle(self.snake[-1].position()))      
