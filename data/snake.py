@@ -50,4 +50,10 @@ class Snake:
          self.head.seth(RIGHT)
    
    def grow(self):
-      self.snake.append(self.createTurtle(self.snake[-1].position()))      
+      self.snake.append(self.createTurtle(self.snake[-1].position()))   
+
+   def reset(self):
+      for seg in self.snake:
+         seg.goto(1800,1800)
+      self.snake.clear()
+      self.__init__()   

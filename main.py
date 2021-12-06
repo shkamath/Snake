@@ -38,13 +38,15 @@ def detect_tail_collision():
 
 game_on = True
 while game_on:
+   is_alive = True
    time.sleep(0.2)
    screen.update()
    snake.move()
-   game_on &= detect_wall_collision()
-   game_on &= detect_tail_collision()
-   if game_on == False:
-      score.game_over()
+   is_alive &= detect_wall_collision()
+   is_alive &= detect_tail_collision()
+   if is_alive == False:
+      score.reset()
+      snake.reset()
 
    #Detect food intake
    if snake.head.distance(food) < 14:
